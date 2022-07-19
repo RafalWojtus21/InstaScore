@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="InstaScore" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="3Gb-Cm-feh">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleAspectFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Uwx-bo-h0b" userLabel="Overall Stack View">
+                                <rect key="frame" x="0.0" y="84" width="414" height="616"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="L1K-J8-Nci" userLabel="Date StackView">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="216"/>
+                                        <subviews>
+                                            <datePicker contentMode="scaleAspectFill" contentHorizontalAlignment="leading" contentVerticalAlignment="top" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="lCQ-RI-wZs">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="216"/>
+                                                <connections>
+                                                    <action selector="dateChosen:" destination="BYZ-38-t0r" eventType="valueChanged" id="Tfu-HQ-cpi"/>
+                                                </connections>
+                                            </datePicker>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="lCQ-RI-wZs" firstAttribute="centerX" secondItem="L1K-J8-Nci" secondAttribute="centerX" id="1rj-e4-xO2"/>
+                                            <constraint firstItem="lCQ-RI-wZs" firstAttribute="top" secondItem="L1K-J8-Nci" secondAttribute="top" id="5DC-U7-15A"/>
+                                            <constraint firstItem="lCQ-RI-wZs" firstAttribute="leading" secondItem="L1K-J8-Nci" secondAttribute="leading" id="5dE-hg-cpV"/>
+                                            <constraint firstItem="lCQ-RI-wZs" firstAttribute="centerY" secondItem="L1K-J8-Nci" secondAttribute="centerY" id="Mkh-Sl-s7n"/>
+                                            <constraint firstAttribute="trailing" secondItem="lCQ-RI-wZs" secondAttribute="trailing" id="e0h-IU-CXg"/>
+                                            <constraint firstAttribute="bottom" secondItem="lCQ-RI-wZs" secondAttribute="bottom" id="tph-TC-zn4"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XZZ-XH-Ngn" userLabel="Second StackView">
+                                        <rect key="frame" x="0.0" y="216" width="414" height="400"/>
+                                        <color key="backgroundColor" red="0.86087566609999999" green="0.83076253239999998" blue="0.64143707100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="400" id="DAv-Fl-9El"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="L1K-J8-Nci" secondAttribute="trailing" id="Ldy-pt-leD"/>
+                                    <constraint firstItem="XZZ-XH-Ngn" firstAttribute="top" secondItem="L1K-J8-Nci" secondAttribute="bottom" id="Qhc-bF-fue"/>
+                                    <constraint firstItem="L1K-J8-Nci" firstAttribute="leading" secondItem="Uwx-bo-h0b" secondAttribute="leading" id="nbu-3s-9AN"/>
+                                    <constraint firstAttribute="trailing" secondItem="XZZ-XH-Ngn" secondAttribute="trailing" id="qwM-TG-CjS"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3Gb-Cm-feh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="BTv-fQ-lNU"/>
+                            <constraint firstAttribute="trailing" secondItem="3Gb-Cm-feh" secondAttribute="trailing" id="Cw9-8b-qFG"/>
+                            <constraint firstItem="Uwx-bo-h0b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NwX-KQ-uct"/>
+                            <constraint firstItem="Uwx-bo-h0b" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="VHN-Ou-7fn"/>
+                            <constraint firstItem="3Gb-Cm-feh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="apw-pX-cp6"/>
+                            <constraint firstAttribute="bottom" secondItem="3Gb-Cm-feh" secondAttribute="bottom" id="rfB-aA-BgP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="lCQ-RI-wZs" id="1XV-v3-NGI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-794.20289855072474" y="93.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="BackgroundImage" width="2120" height="1374"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
