@@ -1,0 +1,6 @@
+framework module Pods_InstaScore {
+  umbrella header "Pods-InstaScore-umbrella.h"
+
+  export *
+  module * { export * }
+}

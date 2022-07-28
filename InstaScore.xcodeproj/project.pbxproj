@@ -7,27 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E7E97882891982F0028ADA1 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7E97872891982F0028ADA1 /* Match.swift */; };
+		8E7E978B28919EF00028ADA1 /* MatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7E978928919EF00028ADA1 /* MatchCell.swift */; };
+		8E7E978C28919EF00028ADA1 /* MatchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E7E978A28919EF00028ADA1 /* MatchCell.xib */; };
+		8E7E978E2891AF1C0028ADA1 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7E978D2891AF1C0028ADA1 /* DetailsViewController.swift */; };
+		8E7E9791289276020028ADA1 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8E7E9790289276020028ADA1 /* IQKeyboardManagerSwift */; };
 		8ECB5EE6287F6EF200CF0213 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB5EE5287F6EF200CF0213 /* AppDelegate.swift */; };
 		8ECB5EE8287F6EF200CF0213 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB5EE7287F6EF200CF0213 /* SceneDelegate.swift */; };
-		8ECB5EEA287F6EF200CF0213 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB5EE9287F6EF200CF0213 /* ViewController.swift */; };
+		8ECB5EEA287F6EF200CF0213 /* ChooseDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB5EE9287F6EF200CF0213 /* ChooseDateViewController.swift */; };
 		8ECB5EED287F6EF200CF0213 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ECB5EEB287F6EF200CF0213 /* Main.storyboard */; };
 		8ECB5EEF287F6EFA00CF0213 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8ECB5EEE287F6EFA00CF0213 /* Assets.xcassets */; };
 		8ECB5EF2287F6EFA00CF0213 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ECB5EF0287F6EFA00CF0213 /* LaunchScreen.storyboard */; };
 		8ECB5EFC28869A2100CF0213 /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB5EFB28869A2100CF0213 /* ScoreManager.swift */; };
 		8ECB5EFF28869C9C00CF0213 /* ScoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB5EFE28869C9C00CF0213 /* ScoreData.swift */; };
+		8ECB5F052886FC9100CF0213 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB5F042886FC9100CF0213 /* ResultViewController.swift */; };
+		8ECB5F07288707D900CF0213 /* ScoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB5F06288707D900CF0213 /* ScoreModel.swift */; };
+		9785CA7A640C078FCAE52490 /* Pods_InstaScore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347751592C891370F2D30CA1 /* Pods_InstaScore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		347751592C891370F2D30CA1 /* Pods_InstaScore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaScore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E7E97872891982F0028ADA1 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		8E7E978928919EF00028ADA1 /* MatchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCell.swift; sourceTree = "<group>"; };
+		8E7E978A28919EF00028ADA1 /* MatchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchCell.xib; sourceTree = "<group>"; };
+		8E7E978D2891AF1C0028ADA1 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		8ECB5EE2287F6EF200CF0213 /* InstaScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ECB5EE5287F6EF200CF0213 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8ECB5EE7287F6EF200CF0213 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8ECB5EE9287F6EF200CF0213 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8ECB5EE9287F6EF200CF0213 /* ChooseDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDateViewController.swift; sourceTree = "<group>"; };
 		8ECB5EEC287F6EF200CF0213 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8ECB5EEE287F6EFA00CF0213 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8ECB5EF1287F6EFA00CF0213 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8ECB5EF3287F6EFA00CF0213 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8ECB5EFB28869A2100CF0213 /* ScoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
 		8ECB5EFE28869C9C00CF0213 /* ScoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreData.swift; sourceTree = "<group>"; };
+		8ECB5F042886FC9100CF0213 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		8ECB5F06288707D900CF0213 /* ScoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreModel.swift; sourceTree = "<group>"; };
+		DF2319BBC3E0EDBA7CB3F6BE /* Pods-InstaScore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaScore.debug.xcconfig"; path = "Target Support Files/Pods-InstaScore/Pods-InstaScore.debug.xcconfig"; sourceTree = "<group>"; };
+		E7A02277E1EFB95F33EA8B37 /* Pods-InstaScore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaScore.release.xcconfig"; path = "Target Support Files/Pods-InstaScore/Pods-InstaScore.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +52,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9785CA7A640C078FCAE52490 /* Pods_InstaScore.framework in Frameworks */,
+				8E7E9791289276020028ADA1 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2575909752C9E0B592C48478 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				347751592C891370F2D30CA1 /* Pods_InstaScore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2D856C867D2080C4C7624B1B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DF2319BBC3E0EDBA7CB3F6BE /* Pods-InstaScore.debug.xcconfig */,
+				E7A02277E1EFB95F33EA8B37 /* Pods-InstaScore.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		8ECB5ED9287F6EF200CF0213 = {
 			isa = PBXGroup;
 			children = (
 				8ECB5EE4287F6EF200CF0213 /* InstaScore */,
 				8ECB5EE3287F6EF200CF0213 /* Products */,
+				2D856C867D2080C4C7624B1B /* Pods */,
+				2575909752C9E0B592C48478 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +102,7 @@
 				8ECB5EE7287F6EF200CF0213 /* SceneDelegate.swift */,
 				8ECB5EFD28869A2D00CF0213 /* Model */,
 				8ECB5EF9288699F000CF0213 /* View */,
+				8ECB5EFA28869A0100CF0213 /* Controller */,
 				8ECB5EEE287F6EFA00CF0213 /* Assets.xcassets */,
 				8ECB5EF0287F6EFA00CF0213 /* LaunchScreen.storyboard */,
 				8ECB5EF3287F6EFA00CF0213 /* Info.plist */,
@@ -75,7 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				8ECB5EEB287F6EF200CF0213 /* Main.storyboard */,
-				8ECB5EFA28869A0100CF0213 /* Controller */,
+				8E7E978928919EF00028ADA1 /* MatchCell.swift */,
+				8E7E978A28919EF00028ADA1 /* MatchCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -83,7 +123,9 @@
 		8ECB5EFA28869A0100CF0213 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				8ECB5EE9287F6EF200CF0213 /* ViewController.swift */,
+				8ECB5EE9287F6EF200CF0213 /* ChooseDateViewController.swift */,
+				8ECB5F042886FC9100CF0213 /* ResultViewController.swift */,
+				8E7E978D2891AF1C0028ADA1 /* DetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -93,6 +135,8 @@
 			children = (
 				8ECB5EFB28869A2100CF0213 /* ScoreManager.swift */,
 				8ECB5EFE28869C9C00CF0213 /* ScoreData.swift */,
+				8ECB5F06288707D900CF0213 /* ScoreModel.swift */,
+				8E7E97872891982F0028ADA1 /* Match.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -104,15 +148,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8ECB5EF6287F6EFA00CF0213 /* Build configuration list for PBXNativeTarget "InstaScore" */;
 			buildPhases = (
+				4A1FBC220ABB3708C214F719 /* [CP] Check Pods Manifest.lock */,
 				8ECB5EDE287F6EF200CF0213 /* Sources */,
 				8ECB5EDF287F6EF200CF0213 /* Frameworks */,
 				8ECB5EE0287F6EF200CF0213 /* Resources */,
+				138A02146CB3C942FF27ED37 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = InstaScore;
+			packageProductDependencies = (
+				8E7E9790289276020028ADA1 /* IQKeyboardManagerSwift */,
+			);
 			productName = InstaScore;
 			productReference = 8ECB5EE2287F6EF200CF0213 /* InstaScore.app */;
 			productType = "com.apple.product-type.application";
@@ -141,6 +190,9 @@
 				Base,
 			);
 			mainGroup = 8ECB5ED9287F6EF200CF0213;
+			packageReferences = (
+				8E7E978F289276010028ADA1 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+			);
 			productRefGroup = 8ECB5EE3287F6EF200CF0213 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -158,21 +210,69 @@
 				8ECB5EF2287F6EFA00CF0213 /* LaunchScreen.storyboard in Resources */,
 				8ECB5EEF287F6EFA00CF0213 /* Assets.xcassets in Resources */,
 				8ECB5EED287F6EF200CF0213 /* Main.storyboard in Resources */,
+				8E7E978C28919EF00028ADA1 /* MatchCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		138A02146CB3C942FF27ED37 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InstaScore/Pods-InstaScore-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InstaScore/Pods-InstaScore-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InstaScore/Pods-InstaScore-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A1FBC220ABB3708C214F719 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InstaScore-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8ECB5EDE287F6EF200CF0213 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E7E978B28919EF00028ADA1 /* MatchCell.swift in Sources */,
 				8ECB5EFC28869A2100CF0213 /* ScoreManager.swift in Sources */,
-				8ECB5EEA287F6EF200CF0213 /* ViewController.swift in Sources */,
+				8ECB5EEA287F6EF200CF0213 /* ChooseDateViewController.swift in Sources */,
+				8ECB5F052886FC9100CF0213 /* ResultViewController.swift in Sources */,
+				8ECB5F07288707D900CF0213 /* ScoreModel.swift in Sources */,
 				8ECB5EFF28869C9C00CF0213 /* ScoreData.swift in Sources */,
+				8E7E97882891982F0028ADA1 /* Match.swift in Sources */,
 				8ECB5EE6287F6EF200CF0213 /* AppDelegate.swift in Sources */,
 				8ECB5EE8287F6EF200CF0213 /* SceneDelegate.swift in Sources */,
+				8E7E978E2891AF1C0028ADA1 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +416,7 @@
 		};
 		8ECB5EF7287F6EFA00CF0213 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF2319BBC3E0EDBA7CB3F6BE /* Pods-InstaScore.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -343,6 +444,7 @@
 		};
 		8ECB5EF8287F6EFA00CF0213 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7A02277E1EFB95F33EA8B37 /* Pods-InstaScore.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -390,6 +492,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8E7E978F289276010028ADA1 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8E7E9790289276020028ADA1 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8E7E978F289276010028ADA1 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8ECB5EDA287F6EF200CF0213 /* Project object */;
 }
