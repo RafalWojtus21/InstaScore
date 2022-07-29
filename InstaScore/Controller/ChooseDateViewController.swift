@@ -3,7 +3,7 @@ import CLTypingLabel
 
 var date1 = "2022-05-01"
 var date2 = "2022-05-03"
-let zmiana2testowe = "zmiana"
+
 class ChooseDateViewController: UIViewController, ScoreManagerDelegate{
     
     var scoreManager = ScoreManager()
