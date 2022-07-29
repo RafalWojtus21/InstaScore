@@ -56,7 +56,12 @@ extension ResultViewController: ScoreManagerDelegate{
             self.matches.append(newMatch)
         }
         print("Meczyki halo \(matches)")
-    }
+        DispatchQueue.main.async {
+            
+        
+            self.tableView.reloadData()
+        }}
+        
 }
 
 //MARK: - TableView
