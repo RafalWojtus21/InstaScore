@@ -19,9 +19,8 @@
 		8ECB5EEF287F6EFA00CF0213 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8ECB5EEE287F6EFA00CF0213 /* Assets.xcassets */; };
 		8ECB5EF2287F6EFA00CF0213 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ECB5EF0287F6EFA00CF0213 /* LaunchScreen.storyboard */; };
 		8ECB5EFC28869A2100CF0213 /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB5EFB28869A2100CF0213 /* ScoreManager.swift */; };
-		8ECB5EFF28869C9C00CF0213 /* ScoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB5EFE28869C9C00CF0213 /* ScoreData.swift */; };
+		8ECB5EFF28869C9C00CF0213 /* ScoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB5EFE28869C9C00CF0213 /* ScoreModel.swift */; };
 		8ECB5F052886FC9100CF0213 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB5F042886FC9100CF0213 /* ResultViewController.swift */; };
-		8ECB5F07288707D900CF0213 /* ScoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB5F06288707D900CF0213 /* ScoreModel.swift */; };
 		9785CA7A640C078FCAE52490 /* Pods_InstaScore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347751592C891370F2D30CA1 /* Pods_InstaScore.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,9 +39,8 @@
 		8ECB5EF1287F6EFA00CF0213 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8ECB5EF3287F6EFA00CF0213 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8ECB5EFB28869A2100CF0213 /* ScoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
-		8ECB5EFE28869C9C00CF0213 /* ScoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreData.swift; sourceTree = "<group>"; };
+		8ECB5EFE28869C9C00CF0213 /* ScoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreModel.swift; sourceTree = "<group>"; };
 		8ECB5F042886FC9100CF0213 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
-		8ECB5F06288707D900CF0213 /* ScoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreModel.swift; sourceTree = "<group>"; };
 		DF2319BBC3E0EDBA7CB3F6BE /* Pods-InstaScore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaScore.debug.xcconfig"; path = "Target Support Files/Pods-InstaScore/Pods-InstaScore.debug.xcconfig"; sourceTree = "<group>"; };
 		E7A02277E1EFB95F33EA8B37 /* Pods-InstaScore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaScore.release.xcconfig"; path = "Target Support Files/Pods-InstaScore/Pods-InstaScore.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,8 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				8ECB5EFB28869A2100CF0213 /* ScoreManager.swift */,
-				8ECB5EFE28869C9C00CF0213 /* ScoreData.swift */,
-				8ECB5F06288707D900CF0213 /* ScoreModel.swift */,
+				8ECB5EFE28869C9C00CF0213 /* ScoreModel.swift */,
 				8E7E97872891982F0028ADA1 /* Match.swift */,
 			);
 			path = Model;
@@ -267,8 +264,7 @@
 				8ECB5EFC28869A2100CF0213 /* ScoreManager.swift in Sources */,
 				8ECB5EEA287F6EF200CF0213 /* ChooseDateViewController.swift in Sources */,
 				8ECB5F052886FC9100CF0213 /* ResultViewController.swift in Sources */,
-				8ECB5F07288707D900CF0213 /* ScoreModel.swift in Sources */,
-				8ECB5EFF28869C9C00CF0213 /* ScoreData.swift in Sources */,
+				8ECB5EFF28869C9C00CF0213 /* ScoreModel.swift in Sources */,
 				8E7E97882891982F0028ADA1 /* Match.swift in Sources */,
 				8ECB5EE6287F6EF200CF0213 /* AppDelegate.swift in Sources */,
 				8ECB5EE8287F6EF200CF0213 /* SceneDelegate.swift in Sources */,

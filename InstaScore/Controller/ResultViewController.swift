@@ -1,39 +1,39 @@
 import UIKit
 
-
-
 class ResultViewController: UIViewController{
     var scoreManager = ScoreManager()
-    var matchesCount = 0
-    var tescik = "ABC"
     
+    var matchesCount = 0
+    
+    var date1 = ""
+    var date2 = ""
     var homeTeam = [""]
     var score = [""]
     var awayTeam = [""]
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var buttonStackView: UIStackView!
+
     
-    var testMatches: [Match] = []
-    
-    var matches: [Match] = [
-        
-                Match(homeTeam: "Korona", score: "1-0", awayTeam: "Wisła"),
-                Match(homeTeam: "Celtic", score: "2-0", awayTeam: "Legia"),
-                Match(homeTeam: "Arsenal", score: "3-0", awayTeam: "City")
+    var matches: [ScoreModel] = [
+//
+//                Match(homeTeam: "Korona", score: "1-0", awayTeam: "Wisła"),
+//                Match(homeTeam: "Celtic", score: "2-0", awayTeam: "Legia"),
+//                Match(homeTeam: "Arsenal", score: "3-0", awayTeam: "City")
     ]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // scoreManager.fetchScore(date1: date1, date2: date2)
+        scoreManager.delegate = self
+        scoreManager.fetchScore(date1: date1, date2: date2)
         
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "MatchCell", bundle: nil), forCellReuseIdentifier: "ReusableCell")
-        
-        scoreManager.delegate = self
+
+    
     }
     
     @IBAction func returnPressed(_ sender: UIButton) {
@@ -45,22 +45,9 @@ class ResultViewController: UIViewController{
 //MARK: - ScoreManagerDelegate
 extension ResultViewController: ScoreManagerDelegate{
     func didUpdateScore(scores:[ScoreModel]){
-        
-    
-        for k in 0...scores.count-1{
-            let newHomeTeam = scores[k].match_hometeam_name
-            let newAwayTeam = scores[k].match_awayteam_name
-//            let newScore = "\(scores[k].match_hometeam_score)-\(scores[k].match_awayteam_score)"
-            let newScore = scores[k].match_hometeam_score
-            let newMatch = Match(homeTeam: newHomeTeam, score: newScore, awayTeam: newAwayTeam)
-            self.matches.append(newMatch)
-        }
-        print("Meczyki halo \(matches)")
-        DispatchQueue.main.async {
-            
-        
-            self.tableView.reloadData()
-        }}
+        matches = scores
+        tableView.reloadData()
+    }
         
 }
 
@@ -77,9 +64,9 @@ extension ResultViewController: UITableViewDataSource{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath) as! MatchCell
         let match = matches[indexPath.row]
-        cell.homeTeamLabel.text = match.homeTeam
-        cell.scoreLabel.text = match.score
-        cell.awayTeamLabel.text = match.awayTeam
+        cell.homeTeamLabel.text = match.match_hometeam_name
+        cell.scoreLabel.text = match.match_hometeam_score
+        cell.awayTeamLabel.text = match.match_awayteam_name
         return cell
     }
     

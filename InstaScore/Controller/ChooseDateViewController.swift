@@ -1,11 +1,13 @@
 import UIKit
 import CLTypingLabel
 
-var date1 = "2022-05-01"
-var date2 = "2022-05-03"
+// sprzatanie kodu
+// nawigacja
 
-class ChooseDateViewController: UIViewController, ScoreManagerDelegate{
+class ChooseDateViewController: UIViewController{
     
+    var date1 = "2022-05-01"
+    var date2 = "2022-05-03"
     var scoreManager = ScoreManager()
     
     @IBOutlet weak var dateTF1: UITextField!
@@ -18,7 +20,6 @@ class ChooseDateViewController: UIViewController, ScoreManagerDelegate{
         instaLabel.text = "instaScore"
         
         // Do any additional setup after loading the view.
-        scoreManager.delegate = self
 
         let datePicker1 = UIDatePicker()
         datePicker1.datePickerMode = .date
@@ -38,10 +39,9 @@ class ChooseDateViewController: UIViewController, ScoreManagerDelegate{
         dateTF2.inputView = datePicker2
         dateTF2.text = formatDate(date: Date())
         
-        
-        
     }
     
+
     
     @objc func dateFromChange(datePicker: UIDatePicker){
         dateTF1.text = formatDate(date: datePicker.date)
@@ -65,21 +65,14 @@ class ChooseDateViewController: UIViewController, ScoreManagerDelegate{
 
     
     @IBAction func checkScorePressed(_ sender: UIButton) {
-        scoreManager.fetchScore(date1: date1, date2: date2)
-    }
-    
-    func didUpdateScore(scores:[ScoreModel]){
-        
-        
-        DispatchQueue.main.async {
-        let resultVC = ResultViewController()
-        resultVC.tescik = "HALKO"
-        }
-  
-//         print(scores[0].match_hometeam_name)
+       
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let resultVC =  storyboard.instantiateViewController(withIdentifier: "ResultStoryBoard") as! ResultViewController
+        resultVC.date1 = date1
+        resultVC.date2 = date2
+        self.present(resultVC, animated: true)
     }
     
 
-    
 }
 

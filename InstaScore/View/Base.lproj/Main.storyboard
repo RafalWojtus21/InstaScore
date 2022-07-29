@@ -47,7 +47,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="checkScorePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9db-OE-yiu"/>
-                                    <segue destination="f5p-G7-ewD" kind="show" id="b5Q-Hw-jk2"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zDH-j0-pdt" userLabel="DateTo Textfield">
@@ -106,16 +105,16 @@
         <!--Result View Controller-->
         <scene sceneID="e1F-lq-Jc0">
             <objects>
-                <viewController id="f5p-G7-ewD" customClass="ResultViewController" customModule="InstaScore" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultStoryBoard" id="f5p-G7-ewD" customClass="ResultViewController" customModule="InstaScore" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iW6-3w-l5P">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="j0X-VO-ZLD">
-                                <rect key="frame" x="20" y="108" width="374" height="734"/>
+                                <rect key="frame" x="20" y="64" width="374" height="778"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="iib-Jj-qXo">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="734"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="778"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                 </subviews>
