@@ -118,7 +118,10 @@
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="iib-Jj-qXo">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="778"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" red="0.065786965191364288" green="0.25051248073577881" blue="0.060502223670482635" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.6588235294" green="0.64313725489999995" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="sectionIndexBackgroundColor" red="0.28627450980000002" green="0.36078431370000003" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="sectionIndexTrackingBackgroundColor" red="0.28627450980000002" green="0.36078431370000003" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </tableView>
                                 </subviews>
                             </stackView>
@@ -151,12 +154,12 @@
         <!--Details View Controller-->
         <scene sceneID="xiP-23-Fvv">
             <objects>
-                <viewController id="sA8-AQ-FJe" customClass="DetailsViewController" customModule="InstaScore" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailsStoryBoard" id="sA8-AQ-FJe" customClass="DetailsViewController" customModule="InstaScore" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bIF-mE-1PI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="field" translatesAutoresizingMaskIntoConstraints="NO" id="tL7-NG-paP">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pitch" translatesAutoresizingMaskIntoConstraints="NO" id="tL7-NG-paP">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fuX-zW-yar">
@@ -183,6 +186,9 @@
                             <constraint firstItem="PWG-Pk-wLh" firstAttribute="trailing" secondItem="fuX-zW-yar" secondAttribute="trailing" constant="10" id="p3S-xL-zdF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="fuX-zW-yar" id="Fqr-Pg-y5d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jgt-UX-yhz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -212,6 +218,7 @@
     </designables>
     <resources>
         <image name="field" width="6000" height="3376"/>
+        <image name="pitch" width="5879" height="7838"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

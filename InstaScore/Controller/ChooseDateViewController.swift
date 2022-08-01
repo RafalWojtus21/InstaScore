@@ -1,9 +1,7 @@
 import UIKit
 import CLTypingLabel
-
 // sprzatanie kodu
 // nawigacja
-
 class ChooseDateViewController: UIViewController{
     
     var date1 = "2022-05-01"
@@ -16,18 +14,13 @@ class ChooseDateViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         instaLabel.text = "instaScore"
-        
-        // Do any additional setup after loading the view.
 
         let datePicker1 = UIDatePicker()
         datePicker1.datePickerMode = .date
         datePicker1.addTarget(self, action: #selector(dateFromChange(datePicker:)), for: UIControl.Event.valueChanged)
-        
         datePicker1.frame.size = CGSize(width: 0, height: 300)
         datePicker1.preferredDatePickerStyle = .wheels
-        
         dateTF1.inputView = datePicker1
         dateTF1.text = formatDate(date: Date())
                 
@@ -40,8 +33,6 @@ class ChooseDateViewController: UIViewController{
         dateTF2.text = formatDate(date: Date())
         
     }
-    
-
     
     @objc func dateFromChange(datePicker: UIDatePicker){
         dateTF1.text = formatDate(date: datePicker.date)
@@ -63,16 +54,12 @@ class ChooseDateViewController: UIViewController{
         return formatter.string(from: date)
     }
 
-    
     @IBAction func checkScorePressed(_ sender: UIButton) {
-       
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let resultVC =  storyboard.instantiateViewController(withIdentifier: "ResultStoryBoard") as! ResultViewController
         resultVC.date1 = date1
         resultVC.date2 = date2
         self.present(resultVC, animated: true)
     }
-    
-
 }
 
