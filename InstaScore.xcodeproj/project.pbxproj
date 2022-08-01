@@ -12,6 +12,8 @@
 		8E7E978C28919EF00028ADA1 /* MatchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E7E978A28919EF00028ADA1 /* MatchCell.xib */; };
 		8E7E978E2891AF1C0028ADA1 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7E978D2891AF1C0028ADA1 /* DetailsViewController.swift */; };
 		8E7E9791289276020028ADA1 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8E7E9790289276020028ADA1 /* IQKeyboardManagerSwift */; };
+		8E825D4B2898040F00DA6564 /* DetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E825D492898040F00DA6564 /* DetailsCell.swift */; };
+		8E825D4C2898040F00DA6564 /* DetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E825D4A2898040F00DA6564 /* DetailsCell.xib */; };
 		8ECB5EE6287F6EF200CF0213 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB5EE5287F6EF200CF0213 /* AppDelegate.swift */; };
 		8ECB5EE8287F6EF200CF0213 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB5EE7287F6EF200CF0213 /* SceneDelegate.swift */; };
 		8ECB5EEA287F6EF200CF0213 /* ChooseDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECB5EE9287F6EF200CF0213 /* ChooseDateViewController.swift */; };
@@ -30,6 +32,8 @@
 		8E7E978928919EF00028ADA1 /* MatchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCell.swift; sourceTree = "<group>"; };
 		8E7E978A28919EF00028ADA1 /* MatchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchCell.xib; sourceTree = "<group>"; };
 		8E7E978D2891AF1C0028ADA1 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		8E825D492898040F00DA6564 /* DetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCell.swift; sourceTree = "<group>"; };
+		8E825D4A2898040F00DA6564 /* DetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsCell.xib; sourceTree = "<group>"; };
 		8ECB5EE2287F6EF200CF0213 /* InstaScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ECB5EE5287F6EF200CF0213 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8ECB5EE7287F6EF200CF0213 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +118,8 @@
 				8ECB5EEB287F6EF200CF0213 /* Main.storyboard */,
 				8E7E978928919EF00028ADA1 /* MatchCell.swift */,
 				8E7E978A28919EF00028ADA1 /* MatchCell.xib */,
+				8E825D492898040F00DA6564 /* DetailsCell.swift */,
+				8E825D4A2898040F00DA6564 /* DetailsCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -207,6 +213,7 @@
 				8ECB5EF2287F6EFA00CF0213 /* LaunchScreen.storyboard in Resources */,
 				8ECB5EEF287F6EFA00CF0213 /* Assets.xcassets in Resources */,
 				8ECB5EED287F6EF200CF0213 /* Main.storyboard in Resources */,
+				8E825D4C2898040F00DA6564 /* DetailsCell.xib in Resources */,
 				8E7E978C28919EF00028ADA1 /* MatchCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,6 +269,7 @@
 			files = (
 				8E7E978B28919EF00028ADA1 /* MatchCell.swift in Sources */,
 				8ECB5EFC28869A2100CF0213 /* ScoreManager.swift in Sources */,
+				8E825D4B2898040F00DA6564 /* DetailsCell.swift in Sources */,
 				8ECB5EEA287F6EF200CF0213 /* ChooseDateViewController.swift in Sources */,
 				8ECB5F052886FC9100CF0213 /* ResultViewController.swift in Sources */,
 				8ECB5EFF28869C9C00CF0213 /* ScoreModel.swift in Sources */,

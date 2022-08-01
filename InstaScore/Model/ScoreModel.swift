@@ -8,6 +8,8 @@ struct ScoreModel : Codable {
     let match_awayteam_name : String
     let match_awayteam_score : String
     let goalscorer : [GoalScorer]
+    let cards : [Cards]
+    let substitutions : Substitutions
     
 //    enum CodingKeys : String, CodingKey {
 //        case leagueName = "league_name"
@@ -22,4 +24,26 @@ struct GoalScorer : Codable {
     let away_scorer : String
     let away_assist: String
     let score_info_time : String
+}
+
+struct Cards : Codable {
+    let time : String
+    let home_fault : String
+    let card : String
+    let away_fault : String
+}
+
+struct Substitutions : Codable {
+    let home : [Home]
+    let away : [Away]
+}
+
+struct Home : Codable {
+    let time : String
+    let substitution : String
+}
+
+struct Away : Codable {
+    let time : String
+    let substitution : String
 }

@@ -43,7 +43,7 @@ extension ResultViewController: UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath) as! MatchCell
         let match = matches[indexPath.row]
         cell.homeTeamLabel.text = match.match_hometeam_name
-        cell.scoreLabel.text = match.match_hometeam_score
+        cell.scoreLabel.text = "\(match.match_hometeam_score)-\(match.match_awayteam_score)"
         cell.awayTeamLabel.text = match.match_awayteam_name
         return cell
     }
@@ -55,6 +55,7 @@ extension ResultViewController: UITableViewDelegate{
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let detailsVC =  storyboard.instantiateViewController(withIdentifier: "DetailsStoryBoard") as! DetailsViewController
         detailsVC.matches = matches
+        detailsVC.indexChosen = indexPath.row
         self.present(detailsVC, animated: true)
     }
 }
