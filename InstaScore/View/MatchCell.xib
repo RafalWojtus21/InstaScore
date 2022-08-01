@@ -13,18 +13,18 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReusableCell" rowHeight="184" id="KGk-i7-Jjw" customClass="MatchCell" customModule="InstaScore" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="184"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="184"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="z8x-vm-2CB">
-                        <rect key="frame" x="10" y="20" width="300" height="144"/>
+                        <rect key="frame" x="10" y="20" width="300" height="150"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EBA-Wb-EWJ" userLabel="HomeTeamView">
-                                <rect key="frame" x="0.0" y="0.0" width="80" height="144"/>
+                                <rect key="frame" x="0.0" y="0.0" width="80" height="150"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XdV-FV-qrS">
-                                        <rect key="frame" x="19.5" y="62" width="41.5" height="20.5"/>
+                                        <rect key="frame" x="19.5" y="65" width="41.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -38,10 +38,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LEm-MO-09d" userLabel="ScoreView">
-                                <rect key="frame" x="81" y="0.0" width="138" height="144"/>
+                                <rect key="frame" x="81" y="0.0" width="138" height="150"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4v-pe-Ibw">
-                                        <rect key="frame" x="48.5" y="62" width="41.5" height="20.5"/>
+                                        <rect key="frame" x="48.5" y="65" width="41.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -54,10 +54,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ZN-uy-Vbz" userLabel="AwayTeamView">
-                                <rect key="frame" x="220" y="0.0" width="80" height="144"/>
+                                <rect key="frame" x="220" y="0.0" width="80" height="150"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcO-Y5-TPa">
-                                        <rect key="frame" x="19.5" y="62" width="41.5" height="20.5"/>
+                                        <rect key="frame" x="19.5" y="65" width="41.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -75,6 +75,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemRedColor"/>
                         <constraints>
+                            <constraint firstAttribute="height" constant="150" id="2Ze-Vl-JMb"/>
                             <constraint firstAttribute="bottom" secondItem="LEm-MO-09d" secondAttribute="bottom" id="58k-CF-PFl"/>
                             <constraint firstItem="EBA-Wb-EWJ" firstAttribute="top" secondItem="z8x-vm-2CB" secondAttribute="top" id="GE1-ND-BzI"/>
                             <constraint firstItem="LEm-MO-09d" firstAttribute="top" secondItem="z8x-vm-2CB" secondAttribute="top" id="Oph-1y-GiA"/>
