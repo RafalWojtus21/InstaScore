@@ -4,6 +4,7 @@ class DetailsCell: UITableViewCell {
 
     @IBOutlet weak var minuteLabel: UILabel!
     @IBOutlet weak var eventLabel: UILabel!
+    @IBOutlet weak var eventImage: UIImageView!
     override func awakeFromNib() {
         
         super.awakeFromNib()
@@ -14,6 +15,8 @@ class DetailsCell: UITableViewCell {
         eventLabel.numberOfLines = 0
         eventLabel.adjustsFontSizeToFitWidth = true
         eventLabel.font = UIFont.boldSystemFont(ofSize: 16)
+        
+
 
     }
 

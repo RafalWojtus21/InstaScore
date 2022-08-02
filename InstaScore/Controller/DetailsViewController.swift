@@ -37,14 +37,11 @@ extension DetailsViewController: UITableViewDataSource{
     
 
     func sortData() {
-        let goalScorerDetails = matches[indexChosen].goalscorer as! ScoreModel
-        let cardsDetails = matches[indexChosen].cards as! ScoreModel
-        let homeSubstitutionsDetails = matches[indexChosen].substitutions.home as! ScoreModel
-        let awaySubstitutionsDetails = matches[indexChosen].substitutions.away as! ScoreModel
-        var events = [String : ScoreModel]()
-
-
-
+//        let goalScorerDetails = matches[indexChosen].goalscorer as! ScoreModel
+//        let cardsDetails = matches[indexChosen].cards as! ScoreModel
+//        let homeSubstitutionsDetails = matches[indexChosen].substitutions.home as! ScoreModel
+//        let awaySubstitutionsDetails = matches[indexChosen].substitutions.away as! ScoreModel
+//        var events = [String : ScoreModel]()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -62,10 +59,12 @@ extension DetailsViewController: UITableViewDataSource{
             cell.minuteLabel.text = "\(goalscorerDetails[indexPath.row].time)'"
 //            cell.eventLabel.text =  "\(goalscorerDetails[indexPath.row].score) - \(goalscorerDetails[indexPath.row].home_scorer)\(goalscorerDetails[indexPath.row].away_scorer)"
             cell.eventLabel.text = convertEventLabel(eventType: "GOAL", event: "\(goalscorerDetails[indexPath.row].score) - \(goalscorerDetails[indexPath.row].home_scorer)\(goalscorerDetails[indexPath.row].away_scorer)")
+            cell.eventImage = convertImage(imageName: "goal")
         } else if indexPath.row < firstThreshold {
 //            cell.minuteLabel.text = cardsDetails[indexPath.row - goalscorerDetails.count].time
             cell.minuteLabel.text = convertMinuteLabel(time: cardsDetails[indexPath.row - goalscorerDetails.count].time)
             cell.eventLabel.text = convertEventLabel(eventType: cardsDetails[indexPath.row - goalscorerDetails.count].card.uppercased(), event: "\(cardsDetails[indexPath.row - goalscorerDetails.count].home_fault)\(cardsDetails[indexPath.row - goalscorerDetails.count].away_fault)")
+            cell.eventImage = convertImage(imageName: "yellow-card")
         } else if indexPath.row < secondThreshold {
             cell.minuteLabel.text = convertMinuteLabel(time: homeSubstitutionsDetails[indexPath.row - firstThreshold].time)
             cell.eventLabel.text = convertEventLabel(eventType: "HOME - SUBSTITUTION", event: homeSubstitutionsDetails[indexPath.row - firstThreshold].substitution)
@@ -88,6 +87,13 @@ extension DetailsViewController: UITableViewDataSource{
     func convertEventLabel(eventType : String, event : String) -> String {
         let convertedString = "\(eventType): \n \(event)"
         return convertedString
+    }
+    
+    func convertImage(imageName : String) -> UIImageView{
+        let imageName = imageName
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image!)
+        return imageView
     }
     
 }
