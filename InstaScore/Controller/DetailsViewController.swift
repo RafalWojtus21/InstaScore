@@ -57,20 +57,25 @@ extension DetailsViewController: UITableViewDataSource{
         
         if indexPath.row < goalscorerDetails.count {
             cell.minuteLabel.text = "\(goalscorerDetails[indexPath.row].time)'"
-//            cell.eventLabel.text =  "\(goalscorerDetails[indexPath.row].score) - \(goalscorerDetails[indexPath.row].home_scorer)\(goalscorerDetails[indexPath.row].away_scorer)"
             cell.eventLabel.text = convertEventLabel(eventType: "GOAL", event: "\(goalscorerDetails[indexPath.row].score) - \(goalscorerDetails[indexPath.row].home_scorer)\(goalscorerDetails[indexPath.row].away_scorer)")
-            cell.eventImage = convertImage(imageName: "goal")
+            cell.eventImage.image = UIImage(named: "goal")
         } else if indexPath.row < firstThreshold {
-//            cell.minuteLabel.text = cardsDetails[indexPath.row - goalscorerDetails.count].time
             cell.minuteLabel.text = convertMinuteLabel(time: cardsDetails[indexPath.row - goalscorerDetails.count].time)
             cell.eventLabel.text = convertEventLabel(eventType: cardsDetails[indexPath.row - goalscorerDetails.count].card.uppercased(), event: "\(cardsDetails[indexPath.row - goalscorerDetails.count].home_fault)\(cardsDetails[indexPath.row - goalscorerDetails.count].away_fault)")
-            cell.eventImage = convertImage(imageName: "yellow-card")
+            if cardsDetails[indexPath.row - goalscorerDetails.count].card == "yellow card" {
+                cell.eventImage.image = UIImage(named: "yellow-card")
+            } else {
+                cell.eventImage.image = UIImage(named: "red-card")
+            }
+            
         } else if indexPath.row < secondThreshold {
             cell.minuteLabel.text = convertMinuteLabel(time: homeSubstitutionsDetails[indexPath.row - firstThreshold].time)
             cell.eventLabel.text = convertEventLabel(eventType: "HOME - SUBSTITUTION", event: homeSubstitutionsDetails[indexPath.row - firstThreshold].substitution)
+            cell.eventImage.image = UIImage(named: "substitution")
         } else if indexPath.row < thirdThreshold  {
             cell.minuteLabel.text = convertMinuteLabel(time: awaySubstitutionsDetails[indexPath.row - secondThreshold].time)
             cell.eventLabel.text = convertEventLabel(eventType: "AWAY - SUBSTITUTION", event: awaySubstitutionsDetails[indexPath.row - secondThreshold].substitution)
+            cell.eventImage.image = UIImage(named: "substitution")
         } else {
             cell.minuteLabel.text = ""
             cell.eventLabel.text = ""

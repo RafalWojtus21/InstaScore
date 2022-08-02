@@ -5,8 +5,8 @@ import CLTypingLabel
 
 class ChooseDateViewController: UIViewController{
     
-    var date1 = "2022-05-01"
-    var date2 = "2022-05-03"
+    var date1 = "2022-07-30"
+    var date2 = "2022-07-30"
     var scoreManager = ScoreManager()
     
     @IBOutlet weak var dateTF1: UITextField!
