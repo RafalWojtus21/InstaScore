@@ -96,6 +96,7 @@
                         <outlet property="dateTF1" destination="5sn-cJ-zZb" id="kli-mh-IBz"/>
                         <outlet property="dateTF2" destination="zDH-j0-pdt" id="han-xg-c0j"/>
                         <outlet property="instaLabel" destination="LRs-Yy-dNf" id="S9Q-Uv-Zlj"/>
+                        <segue destination="f5p-G7-ewD" kind="show" identifier="goToResults" id="7hp-K8-BAI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -114,10 +115,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="j0X-VO-ZLD">
-                                <rect key="frame" x="20" y="64" width="374" height="778"/>
+                                <rect key="frame" x="20" y="108" width="374" height="734"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="iib-Jj-qXo">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="778"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="734"/>
                                         <color key="backgroundColor" red="0.065786965191364288" green="0.25051248073577881" blue="0.060502223670482635" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" red="0.6588235294" green="0.64313725489999995" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="sectionIndexBackgroundColor" red="0.28627450980000002" green="0.36078431370000003" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -133,7 +134,7 @@
                             <constraint firstItem="j0X-VO-ZLD" firstAttribute="centerX" secondItem="iW6-3w-l5P" secondAttribute="centerX" id="FMu-nY-5lC"/>
                             <constraint firstAttribute="bottom" secondItem="K4r-Pc-JGa" secondAttribute="bottom" id="G1W-O8-9mo"/>
                             <constraint firstItem="j0X-VO-ZLD" firstAttribute="leading" secondItem="2U5-wP-Khz" secondAttribute="leading" constant="20" id="LXV-0q-F2X"/>
-                            <constraint firstItem="2U5-wP-Khz" firstAttribute="trailing" secondItem="K4r-Pc-JGa" secondAttribute="trailing" id="OTZ-TX-loO"/>
+                            <constraint firstAttribute="trailing" secondItem="K4r-Pc-JGa" secondAttribute="trailing" id="OTZ-TX-loO"/>
                             <constraint firstItem="2U5-wP-Khz" firstAttribute="trailing" secondItem="j0X-VO-ZLD" secondAttribute="trailing" constant="20" id="bq7-yY-Llb"/>
                             <constraint firstItem="2U5-wP-Khz" firstAttribute="bottom" secondItem="j0X-VO-ZLD" secondAttribute="bottom" constant="20" id="edn-Oo-NKv"/>
                             <constraint firstItem="K4r-Pc-JGa" firstAttribute="top" secondItem="iW6-3w-l5P" secondAttribute="top" id="pwf-Kc-d1b"/>
@@ -164,7 +165,7 @@
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fuX-zW-yar">
                                 <rect key="frame" x="10" y="40" width="394" height="728"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexColor" red="0.33222023839999998" green="0.21035166860000001" blue="0.86087566609999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="sectionIndexBackgroundColor" systemColor="systemIndigoColor"/>
@@ -176,13 +177,13 @@
                         <constraints>
                             <constraint firstItem="PWG-Pk-wLh" firstAttribute="bottom" secondItem="fuX-zW-yar" secondAttribute="bottom" constant="40" id="4xf-1J-8aS"/>
                             <constraint firstItem="fuX-zW-yar" firstAttribute="top" secondItem="PWG-Pk-wLh" secondAttribute="top" constant="40" id="Bvp-zi-7XY"/>
-                            <constraint firstItem="tL7-NG-paP" firstAttribute="leading" secondItem="PWG-Pk-wLh" secondAttribute="leading" id="ExF-Za-b2o"/>
+                            <constraint firstItem="tL7-NG-paP" firstAttribute="leading" secondItem="bIF-mE-1PI" secondAttribute="leading" id="ExF-Za-b2o"/>
                             <constraint firstItem="fuX-zW-yar" firstAttribute="centerY" secondItem="PWG-Pk-wLh" secondAttribute="centerY" id="HeC-Ld-4Yd"/>
                             <constraint firstAttribute="bottom" secondItem="tL7-NG-paP" secondAttribute="bottom" id="Xtz-1d-aPu"/>
                             <constraint firstItem="fuX-zW-yar" firstAttribute="leading" secondItem="PWG-Pk-wLh" secondAttribute="leading" constant="10" id="avO-7T-Fkh"/>
                             <constraint firstItem="tL7-NG-paP" firstAttribute="top" secondItem="bIF-mE-1PI" secondAttribute="top" id="dFS-sW-g1T"/>
                             <constraint firstItem="fuX-zW-yar" firstAttribute="centerX" secondItem="PWG-Pk-wLh" secondAttribute="centerX" id="i3h-Fc-gfj"/>
-                            <constraint firstItem="PWG-Pk-wLh" firstAttribute="trailing" secondItem="tL7-NG-paP" secondAttribute="trailing" id="oX4-st-w4J"/>
+                            <constraint firstAttribute="trailing" secondItem="tL7-NG-paP" secondAttribute="trailing" id="oX4-st-w4J"/>
                             <constraint firstItem="PWG-Pk-wLh" firstAttribute="trailing" secondItem="fuX-zW-yar" secondAttribute="trailing" constant="10" id="p3S-xL-zdF"/>
                         </constraints>
                     </view>

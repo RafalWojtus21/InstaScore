@@ -7,6 +7,11 @@ class DetailsCell: UITableViewCell {
     override func awakeFromNib() {
         
         super.awakeFromNib()
+        minuteLabel.numberOfLines = 1
+//        minuteLabel.minimumScaleFactor = 1
+        minuteLabel.adjustsFontSizeToFitWidth = true
+        eventLabel.numberOfLines = 1
+        eventLabel.adjustsFontSizeToFitWidth = true
 
     }
 

@@ -44,8 +44,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wmR-PY-5yM">
                                 <rect key="frame" x="70" y="0.0" width="253" height="67"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AdY-2n-tu5">
-                                        <rect key="frame" x="108" y="24.5" width="37.5" height="18"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="djankdsanadjksndajskndaksdnnjdakdnmkadnjaskndkajsndjknadjksdasj" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AdY-2n-tu5">
+                                        <rect key="frame" x="10" y="24.5" width="233" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -53,13 +53,15 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray3Color"/>
                                 <constraints>
+                                    <constraint firstItem="AdY-2n-tu5" firstAttribute="leading" secondItem="wmR-PY-5yM" secondAttribute="leading" constant="10" id="H2U-8c-hS4"/>
+                                    <constraint firstAttribute="trailing" secondItem="AdY-2n-tu5" secondAttribute="trailing" constant="10" id="bfp-05-dVJ"/>
                                     <constraint firstItem="AdY-2n-tu5" firstAttribute="centerY" secondItem="wmR-PY-5yM" secondAttribute="centerY" id="e9Q-YM-qsk"/>
-                                    <constraint firstItem="AdY-2n-tu5" firstAttribute="centerX" secondItem="wmR-PY-5yM" secondAttribute="centerX" id="fpq-yr-W81"/>
                                 </constraints>
                             </view>
                         </subviews>
                     </stackView>
                 </subviews>
+                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="sc0-Ap-tbW" secondAttribute="trailing" constant="10" id="DaY-Yo-s4H"/>
                     <constraint firstItem="sc0-Ap-tbW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="RPd-ES-fmn"/>

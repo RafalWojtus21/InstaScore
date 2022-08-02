@@ -2,6 +2,7 @@ import UIKit
 import CLTypingLabel
 // sprzatanie kodu
 // nawigacja
+
 class ChooseDateViewController: UIViewController{
     
     var date1 = "2022-05-01"
@@ -60,6 +61,7 @@ class ChooseDateViewController: UIViewController{
         resultVC.date1 = date1
         resultVC.date2 = date2
         self.present(resultVC, animated: true)
+//        performSegue(withIdentifier: "goToResults", sender: self)
     }
 }
 

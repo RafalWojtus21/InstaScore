@@ -51,11 +51,12 @@ extension ResultViewController: UITableViewDataSource{
 
 extension ResultViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //performSegue(withIdentifier: "goToDetails", sender: self)
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let detailsVC =  storyboard.instantiateViewController(withIdentifier: "DetailsStoryBoard") as! DetailsViewController
         detailsVC.matches = matches
         detailsVC.indexChosen = indexPath.row
+//        performSegue(withIdentifier: "goToDetails", sender: self)
         self.present(detailsVC, animated: true)
     }
 }
