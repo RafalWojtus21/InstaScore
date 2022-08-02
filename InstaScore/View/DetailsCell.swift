@@ -10,8 +10,10 @@ class DetailsCell: UITableViewCell {
         minuteLabel.numberOfLines = 1
 //        minuteLabel.minimumScaleFactor = 1
         minuteLabel.adjustsFontSizeToFitWidth = true
-        eventLabel.numberOfLines = 1
+        minuteLabel.font = UIFont.boldSystemFont(ofSize: 16)
+        eventLabel.numberOfLines = 0
         eventLabel.adjustsFontSizeToFitWidth = true
+        eventLabel.font = UIFont.boldSystemFont(ofSize: 16)
 
     }
 

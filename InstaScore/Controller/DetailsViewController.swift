@@ -86,7 +86,7 @@ extension DetailsViewController: UITableViewDataSource{
     }
     
     func convertEventLabel(eventType : String, event : String) -> String {
-        let convertedString = "\(eventType): \(event)"
+        let convertedString = "\(eventType): \n \(event)"
         return convertedString
     }
     
