@@ -4,7 +4,7 @@ class ResultViewController: UIViewController{
     var date1 = ""
     var date2 = ""
     var matches: [ScoreModel] = []
-    
+    var matchByCategory: [String : [ScoreModel]] = ["" : []]
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var buttonStackView: UIStackView!
 
@@ -13,6 +13,11 @@ class ResultViewController: UIViewController{
     
         scoreManager.delegate = self
         scoreManager.fetchScore(date1: date1, date2: date2)
+        matchByCategory = Dictionary(grouping: matches) { (match) -> String in
+            let param = match.league_name
+            return param
+        }
+        print(matchByCategory)
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -23,14 +28,25 @@ class ResultViewController: UIViewController{
 extension ResultViewController: ScoreManagerDelegate{
     func didUpdateScore(scores:[ScoreModel]){
         matches = scores
+        
+//        let matchByCategory = Dictionary(grouping: matches) { (match) -> String in
+//            let param = match.league_name
+//            return param
+//        }
         tableView.reloadData()
     }
 }
 //MARK: - TableView
 extension ResultViewController: UITableViewDataSource{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return matches.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath) as! MatchCell
         let match = matches[indexPath.row]
