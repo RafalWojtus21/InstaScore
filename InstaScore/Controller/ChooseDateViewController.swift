@@ -1,12 +1,11 @@
 import UIKit
 import CLTypingLabel
-// sprzatanie kodu
-// nawigacja
-
 class ChooseDateViewController: UIViewController{
     
-    var date1 = "2022-07-30"
-    var date2 = "2022-07-30"
+    var date1 = "2022-08-01"
+    var date2 = "2022-08-05"
+//    var date1 = "2022-08-06"
+//    var date2 = "2022-08-06"
     var scoreManager = ScoreManager()
     
     @IBOutlet weak var dateTF1: UITextField!
@@ -15,7 +14,7 @@ class ChooseDateViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        instaLabel.text = "instaScore"
+        instaLabel.text = "⚡️instaScore"
 
         let datePicker1 = UIDatePicker()
         datePicker1.datePickerMode = .date
@@ -60,8 +59,7 @@ class ChooseDateViewController: UIViewController{
         let resultVC =  storyboard.instantiateViewController(withIdentifier: "ResultStoryBoard") as! ResultViewController
         resultVC.date1 = date1
         resultVC.date2 = date2
-        self.present(resultVC, animated: true)
-//        performSegue(withIdentifier: "goToResults", sender: self)
+        navigationController?.pushViewController(resultVC, animated: true)
     }
 }
 

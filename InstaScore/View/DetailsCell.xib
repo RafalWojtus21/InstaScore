@@ -58,7 +58,7 @@
                                                 <rect key="frame" x="40" y="0.0" width="236" height="65"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AdY-2n-tu5">
-                                                        <rect key="frame" x="1" y="1" width="234" height="63"/>
+                                                        <rect key="frame" x="5" y="1" width="230" height="63"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -67,7 +67,7 @@
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="AdY-2n-tu5" firstAttribute="top" secondItem="PLJ-Lv-o3k" secondAttribute="top" constant="1" id="2tr-kD-QNn"/>
-                                                    <constraint firstItem="AdY-2n-tu5" firstAttribute="leading" secondItem="PLJ-Lv-o3k" secondAttribute="leading" constant="1" id="fQD-SW-Z40"/>
+                                                    <constraint firstItem="AdY-2n-tu5" firstAttribute="leading" secondItem="PLJ-Lv-o3k" secondAttribute="leading" constant="5" id="fQD-SW-Z40"/>
                                                     <constraint firstAttribute="bottom" secondItem="AdY-2n-tu5" secondAttribute="bottom" constant="1" id="reZ-pU-29Y"/>
                                                     <constraint firstAttribute="trailing" secondItem="AdY-2n-tu5" secondAttribute="trailing" constant="1" id="uWn-Ol-FH7"/>
                                                 </constraints>
@@ -86,7 +86,7 @@
                         </subviews>
                     </stackView>
                 </subviews>
-                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="sc0-Ap-tbW" secondAttribute="trailing" constant="5" id="DaY-Yo-s4H"/>
                     <constraint firstItem="sc0-Ap-tbW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="RPd-ES-fmn"/>

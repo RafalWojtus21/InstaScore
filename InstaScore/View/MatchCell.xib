@@ -20,33 +20,56 @@
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="z8x-vm-2CB">
                         <rect key="frame" x="5" y="10" width="417" height="120"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sVa-hz-d8y" userLabel="timeView">
+                                <rect key="frame" x="0.0" y="0.0" width="80" height="120"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5JM-TA-Zg3">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="120"/>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="5JM-TA-Zg3" secondAttribute="bottom" id="6J4-Mr-s3e"/>
+                                    <constraint firstAttribute="width" constant="80" id="89j-SP-SCo"/>
+                                    <constraint firstItem="5JM-TA-Zg3" firstAttribute="top" secondItem="sVa-hz-d8y" secondAttribute="top" id="J5n-sA-CoQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="5JM-TA-Zg3" secondAttribute="trailing" id="Kc8-dy-Vcx"/>
+                                    <constraint firstItem="5JM-TA-Zg3" firstAttribute="centerX" secondItem="sVa-hz-d8y" secondAttribute="centerX" id="eLd-tf-JlH"/>
+                                    <constraint firstItem="5JM-TA-Zg3" firstAttribute="centerY" secondItem="sVa-hz-d8y" secondAttribute="centerY" id="oGw-Dq-sGc"/>
+                                    <constraint firstItem="5JM-TA-Zg3" firstAttribute="leading" secondItem="sVa-hz-d8y" secondAttribute="leading" id="qX4-oD-qap"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EBA-Wb-EWJ" userLabel="HomeTeamView">
-                                <rect key="frame" x="0.0" y="0.0" width="150" height="120"/>
+                                <rect key="frame" x="82" y="0.0" width="120" height="120"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XdV-FV-qrS">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="120"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="XdV-FV-qrS" firstAttribute="centerX" secondItem="EBA-Wb-EWJ" secondAttribute="centerX" id="5Gb-xS-wE2"/>
                                     <constraint firstItem="XdV-FV-qrS" firstAttribute="centerY" secondItem="EBA-Wb-EWJ" secondAttribute="centerY" id="7cb-tm-VFn"/>
-                                    <constraint firstAttribute="width" constant="150" id="DCD-6b-AhP"/>
                                     <constraint firstAttribute="bottom" secondItem="XdV-FV-qrS" secondAttribute="bottom" id="L5e-aZ-sRD"/>
+                                    <constraint firstAttribute="width" constant="120" id="Rqb-RR-RdR"/>
                                     <constraint firstItem="XdV-FV-qrS" firstAttribute="top" secondItem="EBA-Wb-EWJ" secondAttribute="top" id="W7g-fM-GSz"/>
                                     <constraint firstItem="XdV-FV-qrS" firstAttribute="leading" secondItem="EBA-Wb-EWJ" secondAttribute="leading" id="nBx-MG-XKf"/>
                                     <constraint firstAttribute="trailing" secondItem="XdV-FV-qrS" secondAttribute="trailing" id="tDN-J9-Qjy"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LEm-MO-09d" userLabel="ScoreView">
-                                <rect key="frame" x="152" y="0.0" width="113" height="120"/>
+                                <rect key="frame" x="204" y="0.0" width="91" height="120"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4v-pe-Ibw">
-                                        <rect key="frame" x="36" y="50" width="41.5" height="20.5"/>
+                                        <rect key="frame" x="25" y="50" width="41.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -60,10 +83,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ZN-uy-Vbz" userLabel="AwayTeamView">
-                                <rect key="frame" x="267" y="0.0" width="150" height="120"/>
+                                <rect key="frame" x="297" y="0.0" width="120" height="120"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcO-Y5-TPa">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="120"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -74,15 +97,15 @@
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="kcO-Y5-TPa" secondAttribute="bottom" id="0P5-Lw-3vA"/>
                                     <constraint firstItem="kcO-Y5-TPa" firstAttribute="top" secondItem="1ZN-uy-Vbz" secondAttribute="top" id="3Qp-xd-JNP"/>
+                                    <constraint firstAttribute="width" constant="120" id="5pi-A2-A8e"/>
                                     <constraint firstAttribute="trailing" secondItem="kcO-Y5-TPa" secondAttribute="trailing" id="D6o-FK-sdl"/>
                                     <constraint firstItem="kcO-Y5-TPa" firstAttribute="centerY" secondItem="1ZN-uy-Vbz" secondAttribute="centerY" id="Oh8-NN-6Ea"/>
                                     <constraint firstItem="kcO-Y5-TPa" firstAttribute="leading" secondItem="1ZN-uy-Vbz" secondAttribute="leading" id="azU-cV-hee"/>
                                     <constraint firstItem="kcO-Y5-TPa" firstAttribute="centerX" secondItem="1ZN-uy-Vbz" secondAttribute="centerX" id="i0O-UB-edy"/>
-                                    <constraint firstAttribute="width" constant="150" id="omC-C7-iOp"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="LEm-MO-09d" secondAttribute="bottom" id="58k-CF-PFl"/>
@@ -94,7 +117,7 @@
                         </constraints>
                     </stackView>
                 </subviews>
-                <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+                <color key="backgroundColor" systemColor="placeholderTextColor"/>
                 <constraints>
                     <constraint firstItem="z8x-vm-2CB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="GaD-uN-A1x"/>
                     <constraint firstItem="z8x-vm-2CB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="OhB-eO-7NI"/>
@@ -108,13 +131,14 @@
                 <outlet property="homeTeamLabel" destination="XdV-FV-qrS" id="KJt-tk-fhk"/>
                 <outlet property="scoreLabel" destination="G4v-pe-Ibw" id="EnH-8N-mHn"/>
                 <outlet property="stackView" destination="z8x-vm-2CB" id="0rO-b0-eia"/>
+                <outlet property="timeLabel" destination="5JM-TA-Zg3" id="A3j-C0-reY"/>
             </connections>
             <point key="canvasLocation" x="121" y="-52"/>
         </tableViewCell>
     </objects>
     <resources>
-        <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="placeholderTextColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

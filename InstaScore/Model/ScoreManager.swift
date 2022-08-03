@@ -8,8 +8,8 @@ protocol ScoreManagerDelegate {
 struct ScoreManager{
     
     let apiKey_prev = "d54be3482ce751fe1f50ff8e7394dc331a562ca86200ffd08cd5ef54dcb3a8fb"
-    let apiKey = "053c8b7d48ed2b8f7fd6adbe4b492d132efdf9c29ac7fcb1b121e5bce8a5fd57"
-    let scoreURL = "https://apiv3.apifootball.com/?action=get_events&league_id=153&APIkey=145179df342ff37d3af721edf6f1d30d4b95c414122727a0f1c938521d6d0960"
+    let apiKey = "145179df342ff37d3af721edf6f1d30d4b95c414122727a0f1c938521d6d0960"
+    let scoreURL = "https://apiv3.apifootball.com/?action=get_events&league_id=153,164&APIkey=145179df342ff37d3af721edf6f1d30d4b95c414122727a0f1c938521d6d0960"
     
     var delegate : ScoreManagerDelegate?
     

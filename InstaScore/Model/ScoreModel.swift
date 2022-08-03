@@ -3,6 +3,9 @@ import Foundation
 struct ScoreModel : Codable {
     let league_name : String
     let match_status : String
+    let match_date : String
+    let match_time : String
+    let match_live : String // 1-live, 0-finished
     let match_hometeam_name : String
     let match_hometeam_score : String
     let match_awayteam_name : String
@@ -10,10 +13,6 @@ struct ScoreModel : Codable {
     let goalscorer : [GoalScorer]
     let cards : [Cards]
     let substitutions : Substitutions
-    
-//    enum CodingKeys : String, CodingKey {
-//        case leagueName = "league_name"
-//    }
 }
 
 struct GoalScorer : Codable {
