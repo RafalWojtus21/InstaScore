@@ -1,53 +1,38 @@
 import UIKit
 class DetailsViewController: UIViewController {
-    var indexChosen : Int = 9999 {
-        didSet {
-            if indexChosen != 9999 && matches != nil {
-                eventModelsSetup()
-            }
-        }
-    }
-    var matches : [ScoreModel] = [] {
-        didSet {
-            if indexChosen != 9999 && matches != nil {
-            eventModelsSetup()
-            }
-        }
-    }
-    
+    var passDataModel : PassDataModel = PassDataModel(sectionChosen: 9999, indexChosen: 9999, matchesGrouped: [])
     var eventModels : [EventModel] = []
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        eventModelsSetup()
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "DetailsCell", bundle: nil), forCellReuseIdentifier: "DetailsCell")
         UITableView.appearance().backgroundColor = .clear
         tableView.reloadData()
-//        print(matches[indexChosen].goalscorer)
-//        print(matches[indexChosen].cards)
-//        print(matches[indexChosen].substitutions.home)
-//        print(matches[indexChosen].substitutions.away)
-//        let numberOfEvents = matches[indexChosen].goalscorer.count + matches[indexChosen].cards.count + matches[indexChosen].substitutions.home.count + matches[indexChosen].substitutions.away.count
-//        print("TOTAL NUMBER OF EVENTS: \(numberOfEvents)")
-//        print("INDEX CHOSEN : \(indexChosen)")
     }
     func eventModelsSetup() {
-        if matches[indexChosen].goalscorer.count > 0 {
-        eventModels = matches[indexChosen].goalscorer.map({ EventModel(time: $0.time, eventType: "GOAL: \(matches[indexChosen].match_hometeam_name)", eventInfo: "\($0.score) - \($0.home_scorer)\($0.away_scorer)", imageName: "goal") })
+        let matchesGrouped = passDataModel.matchesGrouped
+        let sectionChosen = passDataModel.sectionChosen
+        let indexChosen = passDataModel.indexChosen
+        let matchDetails = matchesGrouped[sectionChosen][indexChosen]
+        
+        if matchesGrouped[sectionChosen][indexChosen].goalscorer.count > 0 {
+        eventModels = matchDetails.goalscorer.map({ EventModel(time: $0.time, eventType: "GOAL: \(matchDetails.match_hometeam_name)", eventInfo: "\($0.score) - \($0.home_scorer)\($0.away_scorer)", imageName: "goal") })
         }
 
-        if matches[indexChosen].cards.count > 0 {
-            eventModels += matches[indexChosen].cards.map({ EventModel(time: $0.time, eventType: "\($0.card.uppercased()): \(matches[indexChosen].match_hometeam_name)" , eventInfo: "\($0.home_fault)\($0.away_fault)", imageName: $0.card) })
+        if matchDetails.cards.count > 0 {
+            eventModels += matchDetails.cards.map({ EventModel(time: $0.time, eventType: "\($0.card.uppercased()): \(matchDetails.match_hometeam_name)" , eventInfo: "\($0.home_fault)\($0.away_fault)", imageName: $0.card) })
         }
 
-        if matches[indexChosen].substitutions.home.count > 0 {
-        eventModels += matches[indexChosen].substitutions.home.map({EventModel(time: $0.time, eventType: "SUBSTITUTION: \(matches[indexChosen].match_hometeam_name)", eventInfo: $0.substitution, imageName: "substitution")})
+        if matchDetails.substitutions.home.count > 0 {
+        eventModels += matchDetails.substitutions.home.map({EventModel(time: $0.time, eventType: "SUBSTITUTION: \(matchDetails.match_hometeam_name)", eventInfo: $0.substitution, imageName: "substitution")})
         }
         
-        if matches[indexChosen].substitutions.away.count > 0 {
-        eventModels += matches[indexChosen].substitutions.away.map({EventModel(time: $0.time, eventType: "SUBSTITUTION: \(matches[indexChosen].match_awayteam_name)", eventInfo: $0.substitution, imageName: "substitution")})
+        if matchDetails.substitutions.away.count > 0 {
+        eventModels += matchDetails.substitutions.away.map({EventModel(time: $0.time, eventType: "SUBSTITUTION: \(matchDetails.match_awayteam_name)", eventInfo: $0.substitution, imageName: "substitution")})
         }
         
         eventModels = eventModels.sorted(by: { $0.time.localizedStandardCompare($1.time) == .orderedAscending})

@@ -36,14 +36,14 @@ class ChooseDateViewController: UIViewController{
     
     @objc func dateFromChange(datePicker: UIDatePicker){
         dateTF1.text = formatDate(date: datePicker.date)
-        // date1 = formatDate(date: datePicker.date)
+//        date1 = formatDate(date: datePicker.date)
         print("Date from \(date1)")
         presentedViewController?.dismiss(animated: true, completion: nil)
     }
     
     @objc func dateToChange(datePicker: UIDatePicker){
         dateTF2.text = formatDate(date: datePicker.date)
-        // date2 = formatDate(date: datePicker.date)
+//        date2 = formatDate(date: datePicker.date)
         print("Date to \(date2)")
         presentedViewController?.dismiss(animated: true, completion: nil)
     }

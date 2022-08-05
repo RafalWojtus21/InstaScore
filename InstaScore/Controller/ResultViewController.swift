@@ -5,6 +5,10 @@ class ResultViewController: UIViewController{
     var date2 = ""
     var matches: [ScoreModel] = []
     var matchByCategory: [String : [ScoreModel]] = ["" : []]
+    var matchesGrouped : [[ScoreModel]] = []
+    
+    var championshipMatches : [ScoreModel] = []
+    var ligue2Matches : [ScoreModel] = []
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var buttonStackView: UIStackView!
     
@@ -26,9 +30,14 @@ class ResultViewController: UIViewController{
         tableView.delegate = self
         tableView.register(UINib(nibName: "MatchCell", bundle: nil), forCellReuseIdentifier: "ReusableCell")
     }
+    
 }
+
 //MARK: - ScoreManagerDelegate
 extension ResultViewController: ScoreManagerDelegate{
+    
+    
+    
     func didUpdateScore(scores:[ScoreModel]){
         matches = scores
         matches.sort { $0.league_name < $1.league_name }
@@ -42,16 +51,25 @@ extension ResultViewController: ScoreManagerDelegate{
                 leagueArray.append(model.league_name)
             }
         }
+    
+        championshipMatches = matches.filter { (a) -> Bool in
+            return a.league_name.contains("Championship")
+        }
 
+        ligue2Matches = matches.filter { (a) -> Bool in
+            return a.league_name.contains("Ligue 2")
+        }
+        matchesGrouped.append(championshipMatches)
+        matchesGrouped.append(ligue2Matches)
+
+        print(matchesGrouped)
         tableView.reloadData()
     }
 }
 //MARK: - TableView
 extension ResultViewController: UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
-        let set = Set(leagueArray)
-        return set.count
-//        return 1
+        return matchesGrouped.count
     }
     
     
@@ -59,48 +77,40 @@ extension ResultViewController: UITableViewDataSource{
         
         let mappedLeagues = leagueArray.map { ($0,1) }
         counts = Dictionary(mappedLeagues, uniquingKeysWith: +)
-        print(counts)
+//        print(counts)
 //        return matches.count
-        if section == 0 {
-            return counts["Championship"] ?? 0
-
-        } else if section == 1 {
-            return counts["Ligue 2"] ?? 0
-        }
-        return 0
+//        if section == 0 {
+//            return counts["Championship"] ?? 0
+//
+//        } else if section == 1 {
+//            return counts["Ligue 2"] ?? 0
+//        }
+//        return 0
+        return matchesGrouped[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath) as! MatchCell
         var match = matches[indexPath.row]
-        var k = 0
-        if indexPath.section == 0 {
-            match = matches[indexPath.row]
-            for index in 0..<indexPath.row {
-                k += 1
-            }
-        }
-        if indexPath.section == 1 {
-            match = matches[indexPath.row + k]
-            for index in 0..<indexPath.row {
-            k += 1
-            }
-        }
-        print(k)
-        print(match)
-        print(indexPath.row)
-        match = matches[k]
-        cell.homeTeamLabel.text = match.match_hometeam_name
-        cell.scoreLabel.text = "\(match.match_hometeam_score)-\(match.match_awayteam_score)"
-        cell.awayTeamLabel.text = match.match_awayteam_name
+        var homeLabel = ""
+        var scoreLabel = ""
+        var awayLabel = ""
         
-        if match.match_status == "" { // not played
-            cell.timeLabel.text = "\(match.match_date) \n \(match.match_time)"
+        let matchData = matchesGrouped[indexPath.section][indexPath.row]
+        homeLabel = matchData.match_hometeam_name
+        scoreLabel = "\(matchData.match_hometeam_score)-\(matchData.match_awayteam_score)"
+        awayLabel = matchData.match_awayteam_name
+        cell.homeTeamLabel.text = homeLabel
+        cell.scoreLabel.text = scoreLabel
+        cell.awayTeamLabel.text = awayLabel
+        
+        if matchData.match_status == "" { // not played
+            cell.timeLabel.text = "\(matchData.match_date) \n \(matchData.match_time)"
         }
         else { // finished or live
-            if match.match_live == "0" { // finished
-                cell.timeLabel.text = match.match_status
-            } else if match.match_live == "1" {
+            if matchData.match_live == "0" { // finished
+                cell.timeLabel.text = matchData.match_status
+            } else if matchData.match_live == "1" {
                 cell.timeLabel.text = "LIVE"
             }
             else {
@@ -110,14 +120,29 @@ extension ResultViewController: UITableViewDataSource{
         return cell
     }
     
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
+//        view.backgroundColor = .black
+//
+//        return view
+//    }
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
-        view.backgroundColor = .systemGreen
-        return view
+        let header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 50))
+        header.backgroundColor = .black
+        let label = UILabel(frame: CGRect(x: header.frame.minX, y: header.frame.minY, width: header.frame.size.width, height: header.frame.size.height))
+        header.addSubview(label)
+        label.text = matchesGrouped[section][0].league_name
+        label.textAlignment = .center
+        label.textColor = .white
+        return header
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50.0
+    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return matchesGrouped[section][0].league_name
     }
     
 }
@@ -125,8 +150,13 @@ extension ResultViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let detailsVC =  storyboard.instantiateViewController(withIdentifier: "DetailsStoryBoard") as! DetailsViewController
-        detailsVC.matches = matches
-        detailsVC.indexChosen = indexPath.row
+//        detailsVC.matches = matches
+//        detailsVC.indexChosen = indexPath.row
+//        detailsVC.sectionChosen = indexPath.section
+//        detailsVC.matchesGrouped = matchesGrouped
+        detailsVC.passDataModel.indexChosen = indexPath.row
+        detailsVC.passDataModel.sectionChosen = indexPath.section
+        detailsVC.passDataModel.matchesGrouped = matchesGrouped
         tableView.reloadData()
         navigationController?.pushViewController(detailsVC, animated: true)
     }
