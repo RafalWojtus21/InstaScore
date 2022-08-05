@@ -4,8 +4,8 @@ class ChooseDateViewController: UIViewController{
     
     var date1 = "2022-07-29"
     var date2 = "2022-08-05"
-//    var date1 = "2022-08-06"
-//    var date2 = "2022-08-06"
+//    var date1 = ""
+//    var date2 = ""
     var scoreManager = ScoreManager()
     
     @IBOutlet weak var dateTF1: UITextField!
