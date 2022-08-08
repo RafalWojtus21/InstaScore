@@ -7,12 +7,15 @@ protocol ScoreManagerDelegate {
 
 struct ScoreManager{
     
-    let scoreURL = "https://apiv3.apifootball.com/?action=get_events&league_id=153&APIkey=d54be3482ce751fe1f50ff8e7394dc331a562ca86200ffd08cd5ef54dcb3a8fb"
+    let apiKey_prev = "d54be3482ce751fe1f50ff8e7394dc331a562ca86200ffd08cd5ef54dcb3a8fb"
+    let apiKey = "145179df342ff37d3af721edf6f1d30d4b95c414122727a0f1c938521d6d0960"
+    let scoreURL = "https://apiv3.apifootball.com/?action=get_events&league_id=153,164&APIkey=145179df342ff37d3af721edf6f1d30d4b95c414122727a0f1c938521d6d0960"
     
     var delegate : ScoreManagerDelegate?
     
     func fetchScore(date1: String, date2: String) {
         let urlString = "\(scoreURL)&from=\(date1)&to=\(date2)"
+        print(urlString)
         performRequest(urlString: urlString)
     }
     
@@ -42,9 +45,9 @@ struct ScoreManager{
     }
     
     func parseJSON(scoreData: Data) -> [ScoreModel] {
-//        let decoder = JSONDecoder()
+        let decoder = JSONDecoder()
         do {
-            let decodedData = try JSONDecoder().decode([ScoreModel].self, from: scoreData)
+            let decodedData = try decoder.decode([ScoreModel].self, from: scoreData)
             // return try decoder.decode([ScoreModel].self, from: scoreData)
             return decodedData
         } catch{
