@@ -1,11 +1,10 @@
 import UIKit
 import CLTypingLabel
+
 class ChooseDateViewController: UIViewController {
-    
     var fromDate = "2022-07-29"
     var toDate = "2022-08-05"
     var scoreManager = ScoreManager()
-    
     @IBOutlet weak var dateFromTextField: UITextField!
     @IBOutlet weak var dateToTextField: UITextField!
     @IBOutlet weak var instaLabel: CLTypingLabel!
@@ -15,23 +14,25 @@ class ChooseDateViewController: UIViewController {
         instaLabel.text = K.appName
         
         let fromDatePicker = UIDatePicker()
-        fromDatePicker.datePickerMode = .date
+        setupDatePicker(datePicker: fromDatePicker)
         fromDatePicker.addTarget(self, action: #selector(dateFromChange(datePicker:)), for: UIControl.Event.valueChanged)
-        fromDatePicker.frame.size = CGSize(width: 0, height: 300)
-        fromDatePicker.preferredDatePickerStyle = .wheels
         dateFromTextField.inputView = fromDatePicker
         let currentDate = formatDate(date: Date())
         dateFromTextField.text = currentDate
         fromDate = currentDate
         
         let toDatePicker = UIDatePicker()
-        toDatePicker.datePickerMode = .date
+        setupDatePicker(datePicker: toDatePicker)
         toDatePicker.addTarget(self, action: #selector(dateToChange(datePicker:)), for: UIControl.Event.valueChanged)
-        toDatePicker.frame.size = CGSize(width: 0, height: 300)
-        toDatePicker.preferredDatePickerStyle = .wheels
         dateToTextField.inputView = toDatePicker
         dateToTextField.text = currentDate
         toDate = currentDate
+    }
+    
+    func setupDatePicker(datePicker: UIDatePicker) {
+        datePicker.datePickerMode = .date
+        datePicker.frame.size = CGSize(width: 0, height: 300)
+        datePicker.preferredDatePickerStyle = .wheels
     }
     
     @objc func dateFromChange(datePicker: UIDatePicker) {
