@@ -106,8 +106,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="KbP-rM-en8"/>
                     <connections>
-                        <outlet property="dateTF1" destination="5sn-cJ-zZb" id="kli-mh-IBz"/>
-                        <outlet property="dateTF2" destination="zDH-j0-pdt" id="han-xg-c0j"/>
+                        <outlet property="dateFromTextField" destination="5sn-cJ-zZb" id="kli-mh-IBz"/>
+                        <outlet property="dateToTextField" destination="zDH-j0-pdt" id="han-xg-c0j"/>
                         <outlet property="instaLabel" destination="LRs-Yy-dNf" id="S9Q-Uv-Zlj"/>
                         <segue destination="f5p-G7-ewD" kind="show" identifier="goToResults" id="7hp-K8-BAI"/>
                     </connections>
