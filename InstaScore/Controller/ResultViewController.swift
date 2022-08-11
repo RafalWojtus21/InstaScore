@@ -1,91 +1,102 @@
 import UIKit
 
-
-
-class ResultViewController: UIViewController{
-    var scoreManager = ScoreManager()
-    var matchesCount = 0
-    var tescik = "ABC"
-    
-    var homeTeam = [""]
-    var score = [""]
-    var awayTeam = [""]
-    
+class ResultViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var buttonStackView: UIStackView!
     
-    var testMatches: [Match] = []
-    
-    var matches: [Match] = [
-        
-                Match(homeTeam: "Korona", score: "1-0", awayTeam: "Wisła"),
-                Match(homeTeam: "Celtic", score: "2-0", awayTeam: "Legia"),
-                Match(homeTeam: "Arsenal", score: "3-0", awayTeam: "City")
-    ]
-    
+    var scoreManager = ScoreManager()
+    var fromDate = ""
+    var toDate = ""
+    var groupedMatches: [[ScoreModel]] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // scoreManager.fetchScore(date1: date1, date2: date2)
-        
+        scoreManager.delegate = self
+        scoreManager.fetchScore(fromDate: fromDate, toDate: toDate)
+        setupView()
+    }
+    
+    private func setupView() {
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UINib(nibName: "MatchCell", bundle: nil), forCellReuseIdentifier: "ReusableCell")
-        
-        scoreManager.delegate = self
+        tableView.register(UINib(nibName: K.matchCellNibName, bundle: nil), forCellReuseIdentifier: K.matchCellIdentifier)
     }
-    
-    @IBAction func returnPressed(_ sender: UIButton) {
-        //   self.dismiss(animated: true, completion: nil)
-    }
-    
 }
-
 //MARK: - ScoreManagerDelegate
-extension ResultViewController: ScoreManagerDelegate{
-    func didUpdateScore(scores:[ScoreModel]){
-        
-    
-        for k in 0...scores.count-1{
-            let newHomeTeam = scores[k].match_hometeam_name
-            let newAwayTeam = scores[k].match_awayteam_name
-//            let newScore = "\(scores[k].match_hometeam_score)-\(scores[k].match_awayteam_score)"
-            let newScore = scores[k].match_hometeam_score
-            let newMatch = Match(homeTeam: newHomeTeam, score: newScore, awayTeam: newAwayTeam)
-            self.matches.append(newMatch)
+extension ResultViewController: ScoreManagerDelegate {
+    func didUpdateScore(scores: [ScoreModel]) {
+        var matches: [ScoreModel] = scores
+        var groupedDictionary: [String: [ScoreModel]]?
+        matches.sort { $0.leagueName < $1.leagueName }
+        groupedDictionary = Dictionary(grouping: matches) { (league) -> String in
+            return league.leagueName
         }
-        print("Meczyki halo \(matches)")
+        if let groupedDictionary = groupedDictionary {
+            let keys = groupedDictionary.keys.sorted()
+            keys.forEach { (key) in
+                groupedMatches.append(groupedDictionary[key]!)
+            }
+        }
+        tableView.reloadData()
     }
 }
-
-//MARK: - TableView
-extension ResultViewController: UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return matches.count
-        // numberofMatches
+//MARK: - TableViewDataSource
+extension ResultViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return groupedMatches.count
     }
-    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return groupedMatches[section].count
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: K.matchCellIdentifier, for: indexPath) as? MatchCell else {
+            return UITableViewCell()
+        }
         
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath) as! MatchCell
-        let match = matches[indexPath.row]
-        cell.homeTeamLabel.text = match.homeTeam
-        cell.scoreLabel.text = match.score
-        cell.awayTeamLabel.text = match.awayTeam
+        let matchData = groupedMatches[indexPath.section][indexPath.row]
+        cell.homeTeamLabel.text = matchData.homeTeamName
+        cell.scoreLabel.text = "\(matchData.homeTeamScore)-\(matchData.awayTeamScore)"
+        cell.awayTeamLabel.text = matchData.awayTeamName
+        if matchData.matchStatus == "" {
+            cell.timeLabel.text = "\(matchData.matchDate) \n \(matchData.matchTime)"
+        }
+        else {
+            switch matchData.matchLive {
+            case .finished:
+                cell.timeLabel.text = matchData.matchStatus
+            case .live:
+                cell.timeLabel.text = "LIVE"
+            default:
+                cell.timeLabel.text = "ERROR"
+            }
+        }
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        view.backgroundColor = .gray
+        let header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 50))
+        header.backgroundColor = .black
+        let label = UILabel(frame: CGRect(x: header.frame.minX, y: header.frame.minY, width: header.frame.size.width, height: header.frame.size.height))
+        header.addSubview(label)
+        label.text = groupedMatches[section][0].leagueName
+        label.textAlignment = .center
+        label.textColor = .white
+        return header
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50.0
+    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return groupedMatches[section][0].leagueName
+    }
 }
-
-extension ResultViewController: UITableViewDelegate{
+//MARK: - TableViewDelegate
+extension ResultViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
-        performSegue(withIdentifier: "goToDetails", sender: self)
-        scoreManager.fetchScore(date1: date1, date2: date2)
-          
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let detailsVC =  storyboard.instantiateViewController(withIdentifier: K.detailsViewControllerID) as! DetailsViewController
+        detailsVC.match = groupedMatches[indexPath.section][indexPath.row]
+        navigationController?.pushViewController(detailsVC, animated: true)
     }
 }
