@@ -5,7 +5,7 @@ struct ScoreModel: Codable {
     let matchStatus: String
     let matchDate: String
     let matchTime: String
-    let matchLive: String // 1-live, 0-finished
+    let matchLive: String 
     let homeTeamName: String
     let homeTeamScore: String
     let awayTeamName: String

@@ -15,7 +15,7 @@ class ChooseDateViewController: UIViewController {
         setupView()
     }
     
-    func setupView() {
+    private func setupView() {
         instaLabel.text = K.appName
         
         let fromDatePicker = UIDatePicker()

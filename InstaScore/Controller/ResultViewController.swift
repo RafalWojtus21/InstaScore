@@ -2,12 +2,10 @@ import UIKit
 
 class ResultViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var buttonStackView: UIStackView!
     
     var scoreManager = ScoreManager()
     var fromDate = ""
     var toDate = ""
-    var groupedDictionary: [String: [ScoreModel]]?
     var groupedMatches: [[ScoreModel]] = []
     
     override func viewDidLoad() {
@@ -17,7 +15,7 @@ class ResultViewController: UIViewController {
         setupView()
     }
     
-    func setupView() {
+    private func setupView() {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: K.matchCellNibName, bundle: nil), forCellReuseIdentifier: K.matchCellIdentifier)
@@ -27,6 +25,7 @@ class ResultViewController: UIViewController {
 extension ResultViewController: ScoreManagerDelegate {
     func didUpdateScore(scores: [ScoreModel]) {
         var matches: [ScoreModel] = scores
+        var groupedDictionary: [String: [ScoreModel]]?
         matches.sort { $0.leagueName < $1.leagueName }
         groupedDictionary = Dictionary(grouping: matches) { (league) -> String in
             return league.leagueName

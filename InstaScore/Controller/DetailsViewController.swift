@@ -12,7 +12,7 @@ class DetailsViewController: UIViewController {
         setupTableView()
     }
     
-    func setupTableView() {
+    private func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: K.detailsCellIdentifier, bundle: nil), forCellReuseIdentifier: K.detailsCellIdentifier)
@@ -20,7 +20,7 @@ class DetailsViewController: UIViewController {
         tableView.reloadData()
     }
     
-    func eventModelsSetup() {
+    private func eventModelsSetup() {
         if let matchDetails = match {
             var scoringTeamName = ""
             var cardReceivingTeamName = ""

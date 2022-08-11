@@ -156,7 +156,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="Wnx-sw-7TX"/>
                     <connections>
-                        <outlet property="buttonStackView" destination="j0X-VO-ZLD" id="awn-UJ-Jwd"/>
                         <outlet property="tableView" destination="iib-Jj-qXo" id="P7g-dy-MCs"/>
                         <segue destination="sA8-AQ-FJe" kind="presentation" identifier="goToDetails" id="bRF-Ib-Gl4"/>
                     </connections>
