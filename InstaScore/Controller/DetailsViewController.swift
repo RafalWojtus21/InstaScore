@@ -1,8 +1,10 @@
 import UIKit
+
 class DetailsViewController: UIViewController {
-    var eventModels: [EventModel] = []
-    var match: ScoreModel?
     @IBOutlet weak var tableView: UITableView!
+    
+    var eventModels : [EventModel] = []
+    var match : ScoreModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -13,20 +15,34 @@ class DetailsViewController: UIViewController {
     func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UINib(nibName: K.detailsCellNibName, bundle: nil), forCellReuseIdentifier: K.detailsCellIdentifier)
+        tableView.register(UINib(nibName: K.detailsCellIdentifier, bundle: nil), forCellReuseIdentifier: K.detailsCellIdentifier)
         UITableView.appearance().backgroundColor = .clear
         tableView.reloadData()
     }
     
     func eventModelsSetup() {
         if let matchDetails = match {
-            eventModels = matchDetails.goalscorer.map({ EventModel(time: $0.time, eventType: "GOAL: \(matchDetails.match_hometeam_name)", eventInfo: "\($0.score) - \($0.home_scorer)\($0.away_scorer)", imageName: K.goalImageName) })
+            var scoringTeamName = ""
+            var cardReceivingTeamName = ""
+            eventModels = matchDetails.goalScorer.map({
+                if $0.homeScorer.isEmpty == true {
+                    scoringTeamName = matchDetails.awayTeamName
+                } else {
+                    scoringTeamName = matchDetails.homeTeamName
+                }
+                return EventModel(time: $0.time, eventType: "\(K.goalAlert) \(scoringTeamName)", eventInfo: "\($0.score) - \($0.homeScorer)\($0.awayScorer)", imageName: K.goalImageName) })
             
-            eventModels += matchDetails.cards.map({ EventModel(time: $0.time, eventType: "\($0.card.uppercased()): \(matchDetails.match_hometeam_name)" , eventInfo: "\($0.home_fault)\($0.away_fault)", imageName: $0.card) })
+            eventModels += matchDetails.cards.map({
+                if $0.homeFault.isEmpty == true {
+                    cardReceivingTeamName = matchDetails.awayTeamName
+                } else {
+                    cardReceivingTeamName = matchDetails.homeTeamName
+                }
+                return EventModel(time: $0.time, eventType: "\($0.card.uppercased()): \(cardReceivingTeamName)" , eventInfo: "\($0.homeFault)\($0.awayFault)", imageName: $0.card) })
             
-            eventModels += matchDetails.substitutions.home.map({ EventModel(time: $0.time, eventType: "SUBSTITUTION: \(matchDetails.match_hometeam_name)", eventInfo: $0.substitution, imageName: K.substitutionImageName) })
+            eventModels += matchDetails.substitutions.home.map({ EventModel(time: $0.time, eventType: "\(K.substitutionAlert) \(matchDetails.homeTeamName)", eventInfo: $0.substitution, imageName: K.substitutionImageName) })
             
-            eventModels += matchDetails.substitutions.away.map({ EventModel(time: $0.time, eventType: "SUBSTITUTION: \(matchDetails.match_awayteam_name)", eventInfo: $0.substitution, imageName: K.substitutionImageName) })
+            eventModels += matchDetails.substitutions.away.map({ EventModel(time: $0.time, eventType: "\(K.substitutionAlert) \(matchDetails.awayTeamName)", eventInfo: $0.substitution, imageName: K.substitutionImageName) })
             
             eventModels = eventModels.sorted(by: { $0.time.localizedStandardCompare($1.time) == .orderedAscending })
         }

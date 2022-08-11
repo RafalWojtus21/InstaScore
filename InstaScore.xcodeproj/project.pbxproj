@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8E7E97882891982F0028ADA1 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7E97872891982F0028ADA1 /* Match.swift */; };
 		8E7E978B28919EF00028ADA1 /* MatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7E978928919EF00028ADA1 /* MatchCell.swift */; };
 		8E7E978C28919EF00028ADA1 /* MatchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E7E978A28919EF00028ADA1 /* MatchCell.xib */; };
 		8E7E978E2891AF1C0028ADA1 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7E978D2891AF1C0028ADA1 /* DetailsViewController.swift */; };
@@ -30,7 +29,6 @@
 
 /* Begin PBXFileReference section */
 		347751592C891370F2D30CA1 /* Pods_InstaScore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaScore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8E7E97872891982F0028ADA1 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		8E7E978928919EF00028ADA1 /* MatchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCell.swift; sourceTree = "<group>"; };
 		8E7E978A28919EF00028ADA1 /* MatchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchCell.xib; sourceTree = "<group>"; };
 		8E7E978D2891AF1C0028ADA1 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
@@ -145,7 +143,6 @@
 				8ECB5EFB28869A2100CF0213 /* ScoreManager.swift */,
 				8ECB5EFE28869C9C00CF0213 /* ScoreModel.swift */,
 				8E825D6928996E2300DA6564 /* EventModel.swift */,
-				8E7E97872891982F0028ADA1 /* Match.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -280,7 +277,6 @@
 				8ECB5F052886FC9100CF0213 /* ResultViewController.swift in Sources */,
 				8ECB5EFF28869C9C00CF0213 /* ScoreModel.swift in Sources */,
 				8E825DC428A3981300DA6564 /* Constants.swift in Sources */,
-				8E7E97882891982F0028ADA1 /* Match.swift in Sources */,
 				8E825D6A28996E2300DA6564 /* EventModel.swift in Sources */,
 				8ECB5EE6287F6EF200CF0213 /* AppDelegate.swift in Sources */,
 				8ECB5EE8287F6EF200CF0213 /* SceneDelegate.swift in Sources */,

@@ -2,15 +2,20 @@ import UIKit
 import CLTypingLabel
 
 class ChooseDateViewController: UIViewController {
-    var fromDate = "2022-07-29"
-    var toDate = "2022-08-05"
-    var scoreManager = ScoreManager()
     @IBOutlet weak var dateFromTextField: UITextField!
     @IBOutlet weak var dateToTextField: UITextField!
     @IBOutlet weak var instaLabel: CLTypingLabel!
     
+    var fromDate = ""
+    var toDate = ""
+    var scoreManager = ScoreManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
+    
+    func setupView() {
         instaLabel.text = K.appName
         
         let fromDatePicker = UIDatePicker()
