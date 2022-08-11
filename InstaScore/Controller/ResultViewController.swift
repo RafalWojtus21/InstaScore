@@ -61,9 +61,9 @@ extension ResultViewController: UITableViewDataSource {
             cell.timeLabel.text = "\(matchData.matchDate) \n \(matchData.matchTime)"
         }
         else { // finished or live
-            if matchData.matchLive == "0" { // finished
+            if matchData.matchLive == .finished { // finished
                 cell.timeLabel.text = matchData.matchStatus
-            } else if matchData.matchLive == "1" {
+            } else if matchData.matchLive == .live {
                 cell.timeLabel.text = "LIVE"
             }
             else {

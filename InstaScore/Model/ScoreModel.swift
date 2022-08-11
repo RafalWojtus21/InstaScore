@@ -5,7 +5,7 @@ struct ScoreModel: Codable {
     let matchStatus: String
     let matchDate: String
     let matchTime: String
-    let matchLive: String 
+    let matchLive: MatchState
     let homeTeamName: String
     let homeTeamScore: String
     let awayTeamName: String
@@ -27,6 +27,11 @@ struct ScoreModel: Codable {
         case goalScorer = "goalscorer"
         case cards = "cards"
         case substitutions = "substitutions"
+    }
+    
+    enum MatchState: String, Codable {
+        case live = "1"
+        case finished = "0"
     }
 }
 
