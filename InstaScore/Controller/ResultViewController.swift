@@ -57,16 +57,16 @@ extension ResultViewController: UITableViewDataSource {
         cell.homeTeamLabel.text = matchData.homeTeamName
         cell.scoreLabel.text = "\(matchData.homeTeamScore)-\(matchData.awayTeamScore)"
         cell.awayTeamLabel.text = matchData.awayTeamName
-        if matchData.matchStatus == "" { // not played
+        if matchData.matchStatus == "" {
             cell.timeLabel.text = "\(matchData.matchDate) \n \(matchData.matchTime)"
         }
-        else { // finished or live
-            if matchData.matchLive == .finished { // finished
+        else {
+            switch matchData.matchLive {
+            case .finished:
                 cell.timeLabel.text = matchData.matchStatus
-            } else if matchData.matchLive == .live {
+            case .live:
                 cell.timeLabel.text = "LIVE"
-            }
-            else {
+            default:
                 cell.timeLabel.text = "ERROR"
             }
         }
