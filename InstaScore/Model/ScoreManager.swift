@@ -5,8 +5,7 @@ protocol ScoreManagerDelegate {
 }
 
 struct ScoreManager {
-    let apiKey = "145179df342ff37d3af721edf6f1d30d4b95c414122727a0f1c938521d6d0960"
-    let scoreURL = "https://apiv3.apifootball.com/?action=get_events&league_id=153,164&APIkey=145179df342ff37d3af721edf6f1d30d4b95c414122727a0f1c938521d6d0960"
+    let scoreURL = "https://apiv3.apifootball.com/?action=get_events&APIkey=a5ff78b6b29bd72f5a74923aae846c0e7b2e50f7fbd169fe30248e23a3a747ce"
     var delegate : ScoreManagerDelegate?
     
     func fetchScore(fromDate: String, toDate: String) {
