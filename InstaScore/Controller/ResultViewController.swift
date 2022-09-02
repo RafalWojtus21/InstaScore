@@ -14,7 +14,7 @@ class ResultViewController: UIViewController {
         scoreManager.fetchScore(fromDate: fromDate, toDate: toDate)
         setupView()
     }
-    
+    //
     private func setupView() {
         tableView.dataSource = self
         tableView.delegate = self
